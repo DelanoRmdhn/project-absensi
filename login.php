@@ -1,16 +1,5 @@
 <?php 
 require 'functions/functions.php';
-
-if(isset($_POST["register"])){
-  if(register($_POST)>0){
-    echo "
-      <script>
-        alert('Registrasi Sukses!');
-        document.location.href ='login.php';
-      </script>
-    ";
-  }
-}
 ?>
 
 <!doctype html>
@@ -32,24 +21,24 @@ if(isset($_POST["register"])){
         </div>
         
         <div class="flex-grow-1 ms-5">
-          <h4 class="login-title">Create your account</h4>
+          <h4 class="login-title">Login Form</h4>
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here" required>
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Enter your Username here" required>
             </div>
       
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Create your Password here" required>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password here" required>
             </div>
 
             <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Confirm your Password here" required>
+              <input type="checkbox" class="checkbox" name="remember" id="remember">
+              <label for="remember" class="form-label fl600">Remember Me</label>
             </div>
             <div class="mb-3">
-            <button button type="submit" class="btn btn-primary" name="register">Register!</button>
+            <button button type="submit" class="btn btn-primary" name="login">Login!</button>
             </div>
           </form> 
         </div>

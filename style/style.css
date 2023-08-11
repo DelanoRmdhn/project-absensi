@@ -30,8 +30,25 @@
   border-radius: 14px;
   margin: 0 auto;
   display: block;
+  background-color: #f9ed32;
+  font-family: 600;
+}
+
+.btn:hover {
+  background-color: #d9bd32;
 }
 
 .form-control {
   border-radius: 14px;
+}
+
+/* LOGIN */
+.checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.fl600 {
+  font-weight: 500;
 }
