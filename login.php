@@ -14,7 +14,7 @@ if(isset($_POST["login"])){
     if(password_verify($password,$row["password"])){
 
       //masuk ke halaman index
-      header("Location: index.php");
+      header("Location: dashboardUser.php");
       exit;
     }
   } 

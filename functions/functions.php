@@ -36,4 +36,6 @@ function register($data){
   mysqli_query($conn,"INSERT INTO user VALUE('','$username','$password')");
   return mysqli_affected_rows($conn);
 }
+
+//function dashboard
 ?>
