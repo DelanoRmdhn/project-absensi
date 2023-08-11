@@ -1,5 +1,16 @@
 <?php 
+require 'functions/functions.php';
 
+if(isset($_POST["register"])){
+  if(register($_POST)>0){
+    echo "
+      <script>
+        alert('Registrasi Sukses!');
+        document.location.href ='login.php';
+      </script>
+    ";
+  }
+}
 ?>
 
 <!doctype html>
@@ -25,7 +36,7 @@
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="email" name="username" class="form-control" id="username"  placeholder="Create your Username here">
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here">
             </div>
       
             <div class="mb-3">
@@ -35,10 +46,10 @@
 
             <div class="mb-3">
               <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="Password" name="confirmPasswword" class="form-control" id="confirmPassword"  placeholder="Confirm your Password here">
+              <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Confirm your Password here">
             </div>
             <div class="mb-3">
-            <button button type="submit" class="btn btn-primary">Register!</button>
+            <button button type="submit" class="btn btn-primary" name="register">Register!</button>
             </div>
           </form> 
         </div>
