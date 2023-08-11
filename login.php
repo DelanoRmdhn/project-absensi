@@ -1,5 +1,31 @@
 <?php 
 require 'functions/functions.php';
+
+if(isset($_POST["login"])){
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+
+  $result = mysqli_query($conn,"SELECT * FROM user WHERE username = '$username'");
+  //cek apakah ada username terdaftar di database
+  if(mysqli_num_rows($result) === 1){
+    
+    //cek password
+    $row = mysqli_fetch_assoc($result);
+    if(password_verify($password,$row["password"])){
+
+      //masuk ke halaman index
+      header("Location: index.php");
+      exit;
+    }
+  } 
+  else {
+    echo "
+    <script>
+      alert('Username Belum Terdaftar!');
+    </script>
+    ";
+  }
+}
 ?>
 
 <!doctype html>

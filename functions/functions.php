@@ -30,6 +30,8 @@ function register($data){
     return false;
   }
 
+  $password = password_hash($password,PASSWORD_DEFAULT);
+
   //memasukan ke dalam tabel user pada database
   mysqli_query($conn,"INSERT INTO user VALUE('','$username','$password')");
   return mysqli_affected_rows($conn);
