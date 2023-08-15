@@ -1,5 +1,5 @@
 <?php 
-$conn = mysqli_connect('localhost','root','','databaseSiswaPkl');
+$conn = mysqli_connect('localhost','root','','databasesiswapkl');
 
 //function registrasi
 function register($data){

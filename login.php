@@ -5,23 +5,34 @@ if(isset($_POST["login"])){
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-  //cek apakah ada username terdaftar di database
-  if(mysqli_num_rows($result) === 1 ){
-  
-    //cek password
+  $result = mysqli_query($conn,"SELECT * FROM user WHERE username = '$username'");
+
+  //cek apa ada data yang sama di database
+  if(mysqli_num_rows($result)=== 1){
+
+    //cek password apakah yang diinput sama dengan yang di database
     $row = mysqli_fetch_assoc($result);
+
     if(password_verify($password,$row["password"])){
-      header("Location: dashboardUser.php");
+      // $_SESSION["login"] = $username;
+     
+      // if(isset($_POST["remember"])){
+      //   setcookie('id',$row["id"], time()+60);
+      //   setcookie('key', hash('sha256',$row["username"]), time()+60);
+      // } 
+      
+      header("Location: index.php");
       exit;
     }
-  } else {
+  }else{
     echo "
     <script>
-      alert('Username Belum Terdaftar!');
+      alert('Password atau Username Salah!');
     </script>
     ";
   }
+
+
 }
 ?>
 
@@ -33,7 +44,7 @@ if(isset($_POST["login"])){
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
-    <title>lslmskmlkmlks</title>
+    <title>Halaman Login</title>
   </head>
   <body>
   <div class="position-absolute top-0 start-50 translate-middle-x">
@@ -55,7 +66,6 @@ if(isset($_POST["login"])){
               <label for="password" class="form-label">Password</label>
               <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password here" required>
             </div>
-
             <div class="mb-3">
               <input type="checkbox" class="checkbox" name="remember" id="remember">
               <label for="remember" class="form-label fl600">Remember Me</label>
