@@ -13,7 +13,7 @@ require 'functions/functions.php';
     <link rel="stylesheet" href="style//dashboard.css">
     
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <title>Dashboard</title> 
 </head>
 <body>
@@ -25,8 +25,8 @@ require 'functions/functions.php';
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Dashboard</span>
-                    <span class="profession">User</span>
+                    <span class="name">Sari Teknologi</span>
+                    <span class="profession">Siswa PKL</span>
                 </div>
             </div>
 
@@ -45,21 +45,22 @@ require 'functions/functions.php';
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <i class='bx bx-time bx-flip-horizontal icon' ></i>
                             <span class="text nav-text">Absensi Masuk</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bell icon'></i>
+                            <i class='bx bx-time icon'></i>
                             <span class="text nav-text">Absensi Pulang</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
+                        <i class='bx bx-pie-chart-alt-2 icon' ></i>
+                        <!-- <i class='bx bx-bar-chart-alt-2 icon' ></i> -->
                             <p class="text nav-text">Persentase 
                                 Kehadiran</p>
                         </a>
