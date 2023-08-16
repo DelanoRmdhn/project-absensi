@@ -10,6 +10,17 @@ require 'functions/functions.php';
 
 date_default_timezone_set("Asia/Jakarta");
 
+if(isset($_POST["absenMasuk"])){
+
+  if(absensi($_POST)>0){
+    echo "
+    <script>
+      alert('WWKKWKKWKW');
+    </script>
+    ";
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -104,11 +115,11 @@ date_default_timezone_set("Asia/Jakarta");
                   <label class="ms-5">Waktu Absensi Masuk</label>
                 </div>
                 <div class="col">
-                  <input type="datetime-local" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
+                  <input type="datetime-local" name="jamMasuk" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
                 </div>
               </div>
               <div class="mx-5 mt-4">
-                <button type="submit" class="btn btn-primary">Absen</button>
+                <button type="submit" class="btn btn-primary" name="absenMasuk">Absen</button>
               </div>
               </form>
             </div>
