@@ -1,8 +1,7 @@
 <?php 
-$conn = mysqli_connect('localhost','root','','databasesiswapkl');
+$conn = mysqli_connect('localhost','root','','db_siswa');
 
-//function registrasi
-function registrasi($data){
+function register($data){
   global $conn;
 
   $username = strtolower(stripslashes($data["username"]));
@@ -22,7 +21,7 @@ function registrasi($data){
 
   ///cek apakah ada username sudah ada atau ada yang sama
     //mengambil data dari tabel user
-  $result = mysqli_query($conn, "SELECT username FROM usersiswa WHERE username = '$username'");
+  $result = mysqli_query($conn, "SELECT username FROM tb_user WHERE username = '$username'");
 
   if(mysqli_fetch_assoc($result)){
     echo "
@@ -37,7 +36,7 @@ function registrasi($data){
   $password = password_hash($password,PASSWORD_DEFAULT);
 
   //masukan data ke dalam database
-  mysqli_query($conn,"INSERT INTO usersiswa VALUES('','$username','$password')");
+  mysqli_query($conn,"INSERT INTO tb_user VALUES('','$username','$password')");
 
   return mysqli_affected_rows($conn);
 }
