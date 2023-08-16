@@ -1,4 +1,11 @@
 <?php 
+session_start();
+
+if( !isset($_SESSION["login"])) {
+  header("Location: login.phpx");
+  exit;
+}
+
 require 'functions/functions.php';
 
 ?>
@@ -16,9 +23,6 @@ require 'functions/functions.php';
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
     <title>Dashboard</title> 
 </head>
 <body>
@@ -49,21 +53,21 @@ require 'functions/functions.php';
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="absen-masuk.php">
                             <i class='bx bx-bar-chart-alt-2 icon' ></i>
                             <span class="text nav-text">Absensi Masuk</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="absen-pulang.php">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Absensi Pulang</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="persentase-kehadiran.php">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <p class="text nav-text">Persentase 
                                 Kehadiran</p>
@@ -74,7 +78,7 @@ require 'functions/functions.php';
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="logout.php">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>

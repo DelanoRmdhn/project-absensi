@@ -1,19 +1,27 @@
 <?php 
+session_start();
 require 'functions/functions.php';
 
 if(isset($_POST["login"])){
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  $result = mysqli_query($conn,"SELECT * FROM user WHERE username = '$username'");
+  $result = mysqli_query($conn, "SELECT * FROM usersiswa WHERE username = '$username'");
+
+  //apakah username ada di database
   if(mysqli_num_rows($result) === 1 ){
-    $row = mysqli_fetch_assoc($result);
-    header("Location: dashboardUser.php");
-  }
-  else{
+    $cekPw = mysqli_fetch_assoc($result);
+    if (password_verify($password, $cekPw["password"])){
+        // set session
+        //jika login berhasil masuk ke halaman index.php
+        $_SESSION["login"] = $username ;
+        header("Location: index.php");
+        exit;
+    }
+  } else {
     echo "
     <script>
-      alert('Passwordd atau Username Salah!');
+      alert('username atau password Salah!');
     </script>
     ";
   }
@@ -29,7 +37,7 @@ if(isset($_POST["login"])){
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
-    <title>slkfmslm</title>
+    <title>Halaman Login</title>
   </head>
   <body>
   <div class="position-absolute top-0 start-50 translate-middle-x">
@@ -52,10 +60,10 @@ if(isset($_POST["login"])){
               <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password here" required>
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <input type="checkbox" name="remember" id="remember">
               <label for="remember" class="form-label">Remember me</label>
-            </div>
+            </div> -->
             <div class="mb-3">
             <button button type="submit" class="btn btn-primary" name="login">Login</button>
             </div>
