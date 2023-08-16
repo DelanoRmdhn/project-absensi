@@ -52,17 +52,18 @@ function query($query){
     $rows[] = $row;
   }
   return $rows;
+}
 
 //function absen masuk
 function absensi($data){
   global $conn;
+
   $username = $data["username"];
   $jamMasuk = $data["jamMasuk"];
 
-  $query = "INSERT INTO tb_absen (,username,jam_masuk) VALUES ('','$username','$jamMasuk')";
-  mysqli_query($conn,$query);
+  $query = "INSERT INTO (,username,jam_masuk) VALUES ('$username','$jamMasuk')";
 
+  mysqli_query($conn,$query);
   return mysqli_affected_rows($conn);
-}
 }
 ?>

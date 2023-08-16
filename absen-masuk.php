@@ -10,15 +10,23 @@ require 'functions/functions.php';
 
 date_default_timezone_set("Asia/Jakarta");
 
-if(isset($_POST["absenMasuk"])){
+if(isset($_POST["absen"])){
 
-  if(absensi($_POST)>0){
+  $username1 = $_SESSION["login"];
+
+  $username = $username1;
+  $jamMasuk = date("Y-m-d H:i:s");
+
+  $query = "INSERT INTO tb_absen (username, jamMasuk) VALUES ('$username','$jamMasuk')";
+  if(mysqli_query($conn,$query)){
     echo "
     <script>
-      alert('WWKKWKKWKW');
+      alert('Berhasil Absen!');
+      document.location.href = 'dashboardUser.php';
     </script>
     ";
   }
+
 }
 
 ?>
@@ -100,13 +108,13 @@ if(isset($_POST["absenMasuk"])){
           <h1 class="mt-5 text">Silahkan absen, <?= $_SESSION["login"];?></h1>
           <div class="card ms-5 me-5">
             <div class="card-body">
-              <form action="" method="post">
               <div class="mb-3 mt-5">
-              <div class="row">
-                <div class="col">
-                  <label class="ms-5">Nama Siswa PKL</label>
-                </div>
-                <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <label class="ms-5">Nama Siswa PKL</label>
+                  </div>
+                  <div class="col">
+                  <form action="" method="post">
                   <input type="text" class="form-control" name="username" value="<?=$_SESSION["login"] ?>"disabled>
                 </div>
               </div>
@@ -119,7 +127,7 @@ if(isset($_POST["absenMasuk"])){
                 </div>
               </div>
               <div class="mx-5 mt-4">
-                <button type="submit" class="btn btn-primary" name="absenMasuk">Absen</button>
+                <button type="submit" class="btn btn-primary" name="absen">Absen</button>
               </div>
               </form>
             </div>
