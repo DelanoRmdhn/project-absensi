@@ -9,9 +9,9 @@
 
 :root {
   /* ===== Colors ===== */
-  --body-color: #e4e9f7;
+  --body-color: #dfe9f4;
   --sidebar-color: #fff;
-  --primary-color: #695cfe;
+  --primary-color: #054c73;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
@@ -312,3 +312,5 @@ body.dark .switch::before {
 body.dark .home .text {
   color: var(--text-color);
 }
+
+/* ABSEN MASUK */
