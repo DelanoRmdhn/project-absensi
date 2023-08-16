@@ -7,9 +7,6 @@ if( !isset($_SESSION["login"])) {
 }
 
 require 'functions/functions.php';
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +36,7 @@ require 'functions/functions.php';
 
                 <div class="text logo-text">
                     <span class="name">Dashboard</span>
-                    <span class="profession">User</span>
+                    <span class="profession"><?= $_SESSION["login"];?></span>
                 </div>
             </div>
 
@@ -58,23 +55,15 @@ require 'functions/functions.php';
 
                     <li class="nav-link">
                         <a href="absen-masuk.php">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <i class='bx bx-time bx-rotate-270 icon' ></i>
                             <span class="text nav-text">Absensi Masuk</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="absen-pulang.php">
-                            <i class='bx bx-bell icon'></i>
+                            <i class='bx bx-time-five icon'></i>
                             <span class="text nav-text">Absensi Pulang</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="persentase-kehadiran.php">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
-                            <p class="text nav-text">Persentase 
-                                Kehadiran</p>
                         </a>
                     </li>
                 </ul>
@@ -93,8 +82,9 @@ require 'functions/functions.php';
     </nav>
 
     <section class="home">
-        <div class="text">Selamat Datang, User</div>
+        <div class="text">Selamat Datang, <?= $_SESSION["login"];?></div>
         
+        <div class="container">
         <div class="d-flex flex-row mb-3 p-3">
             <div class="p-4">
                 <div class="card text-bg-success mb-3" style="max-width: 540px;">
@@ -106,7 +96,8 @@ require 'functions/functions.php';
                         <div class="card-body">
                             <h5 class="card-title mt-3">Absensi Masuk</h5>
                             <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Masuk.</p>
-                            <button type="button" class="btn btn-warning">Absen Masuk</button>
+                            <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
+
                         </div>
                     </div>
                     </div>
@@ -122,32 +113,15 @@ require 'functions/functions.php';
                         <div class="card-body">
                             <h5 class="card-title mt-3">Absensi Pulang</h5>
                             <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Pulang.</p>
-                            <button type="button" class="btn btn-warning">Absen Pulang</button>
-
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="card text-bg-light mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 p-4">
-                            <img src="img/register-img.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title mt-3">Persentase Kehadiran</h5>
-                            <p class="card-text">Persentase Kehadiran Siswa PKL Selama Prakerin di Sari Teknologi.</p>
-                            <button type="button" class="btn btn-warning">Persentase Kehadiran</button>
-
+                            <a class="btn btn-warning" href="absen-pulang.php" role="button">Klik untuk absen pulang</a>
+                            
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
     </section>
 
     <script>

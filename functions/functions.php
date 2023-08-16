@@ -4,7 +4,7 @@ $conn = mysqli_connect('localhost','root','','db_siswa');
 function register($data){
   global $conn;
 
-  $username = strtolower(stripslashes($data["username"]));
+  $username = stripslashes($data["username"]);
   $password = mysqli_real_escape_string($conn, $data["password"]);
   $confirmPassword = mysqli_real_escape_string($conn, $data["confirmPassword"]);
   
@@ -41,4 +41,5 @@ function register($data){
   return mysqli_affected_rows($conn);
 }
 
+//function dashboard
 ?>
