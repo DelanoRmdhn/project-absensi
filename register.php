@@ -38,7 +38,7 @@ if(isset($_POST["register"])){
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here" required>
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here" required autofocus>
             </div>
       
             <div class="mb-3">
@@ -49,6 +49,9 @@ if(isset($_POST["register"])){
             <div class="mb-3">
               <label for="confirmPassword" class="form-label">Confirm Password</label>
               <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Confirm your Password here" required>
+            </div>
+            <div class="mb-3">
+              <a href="login.php">already have account? login here</a>
             </div>
             <div class="mb-3">
             <button button type="submit" class="btn btn-primary" name="register">Register!</button>

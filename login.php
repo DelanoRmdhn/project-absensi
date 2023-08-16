@@ -55,7 +55,7 @@ if(isset($_POST["login"])){
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Enter your Username here" required>
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Enter your Username here" required autofocus>
             </div>
       
             <div class="mb-3">
@@ -63,10 +63,13 @@ if(isset($_POST["login"])){
               <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password here" required>
             </div>
 
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <input type="checkbox" name="remember" id="remember">
               <label for="remember" class="form-label">Remember me</label>
-            </div> -->
+            </div>
+            <div class="mb-3">
+              <a href="register.php">don't have account?regist here</a>
+            </div>
             <div class="mb-3">
             <button button type="submit" class="btn btn-primary" name="login">Login</button>
             </div>
