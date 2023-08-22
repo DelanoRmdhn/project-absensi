@@ -37,7 +37,7 @@ if(isset($_POST["register"])){
           <h4 class="login-title">Create your account</h4>
           <form action="" method="post">
             <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
+              <label for="username" class="form-label">Nama Siswa PKL</label>
               <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here" required autofocus>
             </div>
       

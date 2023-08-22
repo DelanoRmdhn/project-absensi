@@ -88,6 +88,13 @@ if(isset($_POST["absen"])){
                             <span class="text nav-text">Absensi Pulang</span>
                         </a>
                     </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-table icon'></i>
+                            <span class="text nav-text">Rekap Absensi</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -105,7 +112,7 @@ if(isset($_POST["absen"])){
 
     <section class="home">
         <div class="container">
-          <h1 class="mt-5 text">Silahkan absen, <?= $_SESSION["login"];?></h1>
+          <h1 class="mt-5 text">Silahkan absen Masuk, <?= $_SESSION["login"];?></h1>
           <div class="card ms-5 me-5">
             <div class="card-body">
               <div class="mb-3 mt-5">
@@ -127,7 +134,7 @@ if(isset($_POST["absen"])){
                 </div>
               </div>
               <div class="mx-5 mt-4">
-                <button type="submit" class="btn btn-primary" name="absen">Absen</button>
+                <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.5rem;" type="submit" class="btn btn-success" name="absen">Absen Masuk</button>
               </div>
               </form>
             </div>

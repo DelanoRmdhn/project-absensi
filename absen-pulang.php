@@ -7,6 +7,9 @@ if( !isset($_SESSION["login"])) {
 }
 
 require 'functions/functions.php';
+
+date_default_timezone_set("Asia/Jakarta");
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ require 'functions/functions.php';
                     <li class="nav-link">
                         <a href="dashboardUser.php">
                             <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Halaman Utama</span>
+                            <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
@@ -89,46 +92,34 @@ require 'functions/functions.php';
     </nav>
 
     <section class="home">
-        <div class="text">Selamat Datang, <?= $_SESSION["login"];?></div>
-        
         <div class="container">
-        <div class="d-flex flex-row mb-3 p-3">
-            <div class="p-4">
-                <div class="card text-bg-success mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 p-4">
-                            <img src="img/register-img.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title mt-3">Absensi Masuk</h5>
-                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Masuk.</p>
-                            <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
-
-                        </div>
-                    </div>
-                    </div>
+          <h1 class="mt-5 text">Silahkan absen, <?= $_SESSION["login"];?></h1>
+          <div class="card ms-5 me-5">
+            <div class="card-body">
+              <div class="mb-3 mt-5">
+                <div class="row">
+                  <div class="col">
+                    <label class="ms-5">Nama Siswa PKL</label>
+                  </div>
+                  <div class="col">
+                  <form action="" method="post">
+                  <input type="text" class="form-control" name="username" value="<?=$_SESSION["login"] ?>"disabled>
                 </div>
-            </div>
-            <div class="p-4">
-                <div class="card text-bg-light mb-3" style="max-width: 540px; max-height: 500px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 p-4">
-                            <img src="img/register-img.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title mt-3">Absensi Pulang</h5>
-                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Pulang.</p>
-                            <a class="btn btn-warning" href="absen-pulang.php" role="button">Klik untuk absen pulang</a>
-                            
-                        </div>
-                    </div>
-                    </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label class="ms-5">Waktu Absensi Masuk</label>
                 </div>
+                <div class="col">
+                  <input type="datetime-local" name="jamMasuk" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
+                </div>
+              </div>
+              <div class="mx-5 mt-4">
+                <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.5rem;" type="submit" class="btn btn-danger" name="absenPulang">Absen Pulang</button>
+              </div>
+              </form>
             </div>
-        </div>
-    </div>
+          </div>
     </section>
 
     <script>
