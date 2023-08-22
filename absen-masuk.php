@@ -11,24 +11,20 @@ require 'functions/functions.php';
 date_default_timezone_set("Asia/Jakarta");
 
 if(isset($_POST["absen"])){
-
-  $username1 = $_SESSION["login"];
-
-  $username = $username1;
-  $jamMasuk = date("Y-m-d H:i:s");
-
-  $query = "INSERT INTO tb_absen (username, jamMasuk) VALUES ('$username','$jamMasuk')";
-  if(mysqli_query($conn,$query)){
+  if(absenMasuk($_POST) > 0){
     echo "
     <script>
-      alert('Berhasil Absen!');
-      document.location.href = 'dashboardUser.php';
+        alert('Absen Masuk Berhasil!');
     </script>
     ";
-  }
-
+} else {
+    echo "
+    <script>
+        alert('Absen Masuk Gagal!');
+    </script>
+    ";
 }
-
+}
 ?>
 
 <!DOCTYPE html>

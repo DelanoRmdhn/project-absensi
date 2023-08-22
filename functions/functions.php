@@ -54,16 +54,61 @@ function query($query){
   return $rows;
 }
 
-//function absen masuk
-function absensi($data){
+//funtion absen masuk
+function absenMasuk($data){
+  global $conn;
+  $username1 = $_SESSION["login"];
+  $jamMasuk = date("Y-m-d H:i:s");
+
+  //cek apakah ada data di database
+  $result = mysqli_query($conn,"SELECT username FROM tb_absen WHERE username = '$username1'");
+  if(mysqli_fetch_assoc($result)){
+    echo "
+    <script>
+      alert('Anda Sudah Absen!');
+      document.location.href = 'dashboardUser.php';
+    </script>
+    ";
+    return false;
+  }
+
+  $query = "INSERT INTO tb_absen (username, jamMasuk) VALUES ('$username1','$jamMasuk')";
+  mysqli_query($conn,$query);
+
+  if($jamMasuk > 10.00){
+    echo "
+      <script>
+        alert('ANDA TELAT BAYARKAN DENDA PADA SEKRETARIS!');
+        document.location.href = 'dashboardUser.php';
+      </script>
+    ";
+  }
+
+  return mysqli_affected_rows($conn);
+  }
+
+//function absen pulang
+function absenPulang($data){
   global $conn;
 
-  $username = $data["username"];
-  $jamMasuk = $data["jamMasuk"];
+  $username1 = $_SESSION["login"];
+  $time = date('H:i:s');
 
-  $query = "INSERT INTO (,username,jam_masuk) VALUES ('$username','$jamMasuk')";
+    //cek apakah ada data di database
+    $result = mysqli_query($conn,"SELECT username FROM tb_absen WHERE username = '$username1'");
+    if(mysqli_fetch_assoc($result)){
+      echo "
+      <script>
+        alert('Anda Sudah Absen!');
+        document.location.href = 'dashboardUser.php';
+      </script>
+      ";
+      return false;
+    }
 
-  mysqli_query($conn,$query);
-  return mysqli_affected_rows($conn);
+$query = "UPDATE tb_absen SET jamKeluar='$time' WHERE username='$username1'";
+mysqli_query($conn,$query);
+
+return mysqli_affected_rows($conn);
 }
 ?>

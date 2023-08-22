@@ -10,6 +10,22 @@ require 'functions/functions.php';
 
 date_default_timezone_set("Asia/Jakarta");
 
+if(isset($_POST["absenPulang"])){
+    if(absenPulang($_POST) > 0){
+        echo "
+        <script>
+            alert('Absen Pulang Berhasil!');
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Absen Pulang Gagal!');
+        </script>
+        ";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
