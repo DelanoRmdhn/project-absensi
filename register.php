@@ -34,24 +34,24 @@ if(isset($_POST["register"])){
         </div>
         
         <div class="flex-grow-1 ms-5">
-          <h4 class="login-title">Create your account</h4>
+          <h4 class="login-title">Registrasi Siswa PKL</h4>
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Nama Siswa PKL</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Create your Username here" required autofocus>
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Masukan Nama Anda" required autofocus>
             </div>
       
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Create your Password here" required>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Buat Password Anda" required>
             </div>
 
             <div class="mb-3">
               <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Confirm your Password here" required>
+              <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Konfirmasi Password" required>
             </div>
             <div class="mb-3">
-              <a href="login.php">already have account? login here</a>
+              <a href="login.php">Sudah Punya akun?login disini</a>
             </div>
             <div class="mb-3">
             <button button type="submit" class="btn btn-primary" name="register">Register!</button>

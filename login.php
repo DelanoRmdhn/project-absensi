@@ -51,24 +51,24 @@ if(isset($_POST["login"])){
         </div>
         
         <div class="flex-grow-1 ms-5">
-          <h4 class="login-title">Login Form</h4>
+          <h4 class="login-title">Halaman Login Siswa PKL</h4>
           <form action="" method="post">
             <div class="mb-3">
               <label for="username" class="form-label">Nama Siswa PKL</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Enter your Username here" required autofocus>
+              <input type="text" name="username" class="form-control" id="username"  placeholder="Masukan Nama Anda" required autofocus>
             </div>
       
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password here" required>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password Anda" required>
             </div>
 
             <div class="mb-3">
               <input type="checkbox" name="remember" id="remember">
-              <label for="remember" class="form-label">Remember me</label>
+              <label for="remember" class="form-label">Ingat Saya</label>
             </div>
             <div class="mb-3">
-              <a href="register.php">don't have account?regist here</a>
+              <a href="register.php">belum punya akun?registrasi disini</a>
             </div>
             <div class="mb-3">
             <button button type="submit" class="btn btn-primary" name="login">Login</button>
