@@ -2,6 +2,20 @@
 session_start();
 require 'functions/functions.php';
 
+if(isset($_COOKIE["id"]) && isset($_COOKIE["key"])){
+  $id = $_COOKIE["id"];
+  $key = $_COOKIE["username"];
+
+  $result = mysqli_query($conn,"SELECT username FROM tb_user WHERE id = $id");
+  $row = mysqli_fetch_assoc($result);
+
+  //menyamakan nama username
+    //cek cookie dan username
+    if( $key === hash('sha256',$row["username"])){
+      $_SESSION["login"] = $username;
+    }
+} 
+
 if(isset($_POST["login"])){
   $username = $_POST["username"];
   $password = $_POST["password"];
@@ -14,9 +28,12 @@ if(isset($_POST["login"])){
     //cek password
     $row = mysqli_fetch_assoc($result);
     if (password_verify($password, $row["password"])){
-        // set session
-        //jika login berhasil masuk ke halaman index.php
         $_SESSION["login"] = $username ;
+
+        if(isset($_POST["remember"])){
+          setcookie('id',$row["id"], time()+(12*60*60));
+          setcookie('key', hash('sha256',$row["username"]), time()+(12*60*60));
+        }
         header("Location: dashboardUser.php");
         exit;
     }

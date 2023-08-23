@@ -7,8 +7,8 @@ if( !isset($_SESSION["login"])) {
 }
 
 require 'functions/functions.php';
-
-$dataAbsen = query("SELECT * FROM tb_absen");
+$username1 = $_SESSION["login"];
+$dataAbsen = query("SELECT * FROM tb_absen WHERE username = '$username1'");
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +94,8 @@ $dataAbsen = query("SELECT * FROM tb_absen");
       <div class="container">
         <h1 class="text mt-3">Rekap Absensi Kehadiran <?= $_SESSION["login"]; ?></h1>
       
-      <table class="table table-striped mt-4">
-        <thead>
+      <table class="table table-hover mt-4 ">
+        <thead class="table-dark">
           <tr>
           <th scope="col">No.</th>
           <th scope="col">Nama Siswa</th>

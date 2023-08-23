@@ -87,7 +87,7 @@ if(isset($_POST["absenPulang"])){
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="rekapAbsensi.php">
                             <i class='bx bx-table icon'></i>
                             <span class="text nav-text">Rekap Absensi</span>
                         </a>
