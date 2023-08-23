@@ -4,7 +4,7 @@ require 'functions/functions.php';
 
 if(isset($_COOKIE["id"]) && isset($_COOKIE["key"])){
   $id = $_COOKIE["id"];
-  $key = $_COOKIE["username"];
+  $key = $_COOKIE["key"];
 
   $result = mysqli_query($conn,"SELECT username FROM tb_user WHERE id = $id");
   $row = mysqli_fetch_assoc($result);
@@ -12,9 +12,13 @@ if(isset($_COOKIE["id"]) && isset($_COOKIE["key"])){
   //menyamakan nama username
     //cek cookie dan username
     if( $key === hash('sha256',$row["username"])){
-      $_SESSION["login"] = $username;
+      $_SESSION["login"] = true;
     }
 } 
+
+if(isset($_SESSION["login"])){
+  header("Location: dashboardUser.php");
+}
 
 if(isset($_POST["login"])){
   $username = $_POST["username"];
