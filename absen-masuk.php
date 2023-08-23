@@ -86,7 +86,7 @@ if(isset($_POST["absen"])){
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="rekapAbsensi.php">
                             <i class='bx bx-table icon'></i>
                             <span class="text nav-text">Rekap Absensi</span>
                         </a>
@@ -129,9 +129,12 @@ if(isset($_POST["absen"])){
                   <input type="datetime-local" name="jamMasuk" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
                 </div>
               </div>
-              <div class="mx-5 mt-4">
-                <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.5rem;" type="submit" class="btn btn-success" name="absen">Absen Masuk</button>
-              </div>
+                <div class="mx-5 mt-4">
+                    <div class="d-grid gap-2 d-md-block">
+                        <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.5rem;"       type="submit" class="btn btn-success" name="absen">Absen Masuk</button>
+                        <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2.5rem;"       type="submit" class="btn btn-warning ms-3" name="izin">Izin</button>
+                    </div>  
+                </div>
               </form>
             </div>
           </div>
