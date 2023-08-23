@@ -35,8 +35,9 @@ if(isset($_POST["login"])){
         $_SESSION["login"] = $username ;
 
         if(isset($_POST["remember"])){
-          setcookie('id',$row["id"], time()+(12*60*60));
-          setcookie('key', hash('sha256',$row["username"]), time()+(12*60*60));
+          $cookieExpire = time() + (12 * 3600);
+          setcookie('id',$row["id"], $cookieExpire);
+          setcookie('key', hash('sha256',$row["username"]), $cookieExpire);
         }
         header("Location: dashboardUser.php");
         exit;

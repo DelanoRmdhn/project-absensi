@@ -93,7 +93,7 @@ $dataAbsen = query("SELECT * FROM tb_absen WHERE username = '$username1'");
     <section class="home">
       <div class="container">
         <h1 class="text mt-3">Rekap Absensi Kehadiran <?= $_SESSION["login"]; ?></h1>
-      
+      <div class="table-responsive">
       <table class="table table-hover mt-4 ">
         <thead class="table-dark">
           <tr>
@@ -116,6 +116,7 @@ $dataAbsen = query("SELECT * FROM tb_absen WHERE username = '$username1'");
           <?php endforeach; ?>
         </tbody>
       </table>
+      </div>
       </div>
     </section>
 
