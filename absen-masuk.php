@@ -108,7 +108,7 @@ if(isset($_POST["absen"])){
 
     <section class="home">
         <div class="container">
-          <h1 class="mt-5 text">Silahkan absen Masuk, <?= $_SESSION["login"];?></h1>
+          <h1 class="mt-5 text">Silahkan Melakukan Absensi Kehadiran, <?= $_SESSION["login"];?></h1>
           <div class="card ms-5 me-5">
             <div class="card-body">
               <div class="mb-3 mt-5">

@@ -82,6 +82,14 @@ function absenMasuk($data){
         document.location.href = 'dashboardUser.php';
       </script>
     ";
+  } else if($jamMasuk < 8.00){
+    echo "
+    <script>
+      alert('Belum Bisa Absen!');
+      document.location.href = 'dashboardUser.php';
+    </script>
+  ";
+    return false;
   }
 
   return mysqli_affected_rows($conn);
@@ -92,10 +100,10 @@ function absenPulang($data){
   global $conn;
 
   $username1 = $_SESSION["login"];
-  $time = date('H:i:s');
+  $time = date("H:i:s");
 
     //cek apakah ada data di database
-    $result = mysqli_query($conn,"SELECT username FROM tb_absen WHERE username = '$username1'");
+    $result = mysqli_query($conn,"SELECT jamKeluar FROM tb_absen WHERE jamKeluar = '$time'");
     if(mysqli_fetch_assoc($result)){
       echo "
       <script>
@@ -104,7 +112,7 @@ function absenPulang($data){
       </script>
       ";
       return false;
-    }
+    } 
 
 $query = "UPDATE tb_absen SET jamKeluar='$time' WHERE username='$username1'";
 mysqli_query($conn,$query);

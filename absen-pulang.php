@@ -109,7 +109,7 @@ if(isset($_POST["absenPulang"])){
 
     <section class="home">
         <div class="container">
-          <h1 class="mt-5 text">Silahkan absen, <?= $_SESSION["login"];?></h1>
+          <h1 class="mt-5 text">Silahkan Melakukan Absensi Pulang, <?= $_SESSION["login"];?></h1>
           <div class="card ms-5 me-5">
             <div class="card-body">
               <div class="mb-3 mt-5">
@@ -124,10 +124,10 @@ if(isset($_POST["absenPulang"])){
               </div>
               <div class="row mt-3">
                 <div class="col">
-                  <label class="ms-5">Waktu Absensi Masuk</label>
+                  <label class="ms-5">Waktu Absensi Pulang</label>
                 </div>
                 <div class="col">
-                  <input type="datetime-local" name="jamMasuk" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
+                  <input type="datetime-local" name="jamPulang" class="form-control" value="<?= date("Y-m-d H:i:s")?>"disabled> 
                 </div>
               </div>
               <div class="mx-5 mt-4">
