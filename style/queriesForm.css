@@ -1,0 +1,12 @@
+/* Ketika ukuran dibawah 850px */
+@media (max-width: 850px) {
+  .form-container {
+    background-color: #e6f3ff;
+    width: 500px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    margin-top: 140px;
+    display: block;
+  }
+}
