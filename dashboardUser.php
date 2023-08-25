@@ -93,7 +93,7 @@ require 'functions/functions.php';
         <div class="text">Selamat Datang, <?= $_SESSION["login"];?></div>
         
         <div class="container">
-            <div class="row">
+            <div class="row ms-3 me-3">
                 <div class="col-md-6 mb-4">
                     <div class="card text-bg-success h-100 custom-padding">
                         <div class="row align-items-center">
@@ -112,7 +112,7 @@ require 'functions/functions.php';
                 </div>
             </div>
 
-        <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4">
                     <div class="card h-100 custom-padding">
                         <div class="row align-items-center">
                             <div class="col-md-4">
@@ -126,9 +126,11 @@ require 'functions/functions.php';
                              <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
                         </div>
                         </div>
+                        </div>
                     </div>
-    </div>
-</div>
+                </div>
+            </div>
+        </div>
 </section>
 
     <script>
@@ -136,6 +138,8 @@ require 'functions/functions.php';
       sidebar = body.querySelector('nav'),
       toggle = body.querySelector(".toggle");
 
+
+    
 
 toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");

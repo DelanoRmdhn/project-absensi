@@ -1,0 +1,15 @@
+@media (max-width: 1199px) {
+  .sidebar header .toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar header .toggle {
+    display: none;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+}
