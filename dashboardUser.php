@@ -92,44 +92,43 @@ require 'functions/functions.php';
         <div class="text">Selamat Datang, <?= $_SESSION["login"];?></div>
         
         <div class="container">
-        <div class="d-flex flex-row mb-3 p-3">
-            <div class="p-4">
-                <div class="card text-bg-success mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 p-4">
-                            <img src="img/register-img.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                    <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card text-bg-success h-100 custom-padding">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="img/register-img.png" class="img-fluid rounded-start img-style" alt="...">
+                            </div>
+                        <div class="col-md-8">
+                        
                         <div class="card-body">
                             <h5 class="card-title mt-3">Absensi Masuk</h5>
                             <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Masuk.</p>
-                            <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
+                             <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="card text-bg-light mb-3" style="max-width: 540px; max-height: 500px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 p-4">
-                            <img src="img/register-img.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                    <div class="col-md-8">
+        <div class="col-md-6 mb-4">
+                    <div class="card h-100 custom-padding">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                            <img src="img/register-img.png" class="img-fluid rounded-start img-style" alt="...">
+                            </div>
+                        <div class="col-md-8">
+                        
                         <div class="card-body">
-                            <h5 class="card-title mt-3">Absensi Pulang</h5>
-                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Pulang.</p>
-                            <a class="btn btn-warning" href="absen-pulang.php" role="button">Klik untuk absen pulang</a>
-                            
+                            <h5 class="card-title mt-3">Absensi Masuk</h5>
+                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Masuk.</p>
+                             <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
+                        </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    </section>
+</div>
+</section>
 
     <script>
     const body = document.querySelector('body'),

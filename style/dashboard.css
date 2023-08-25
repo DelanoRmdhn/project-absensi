@@ -313,4 +313,8 @@ body.dark .home .text {
   color: var(--text-color);
 }
 
-/* ABSEN MASUK */
+/* IMAGE */
+
+.custom-padding {
+  padding: 40px;
+}
