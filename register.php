@@ -30,38 +30,37 @@ if(isset($_POST["register"])){
   <body>
   <div class="position-absolute top-0 start-50 translate-middle-x">
     <div class="form-container">
-      <div class="d-flex align-items-center">
-        <div class="flex-shrink-0">
-          <img class="img-register" src="img/register-img.png" alt="...">
+    <div class="custom-align row align-items-center">
+            <div class="col-md-5">
+              <div class="d-flex justify-content-center">
+                <img class="img-register" src="img/register-img.png" alt="...">
+              </div>
+            </div>
+            <div class="col-md-7">
+                <h4 class="login-title text-md">Registrasi Siswa PKL</h4>
+                <form action="" method="post">
+                    <div class="mb-3 custom-margin2">
+                        <label for="username">Nama Siswa PKL</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Masukan Nama Anda" required autofocus>
+                    </div>
+                    <div class="mb-3 custom-margin2">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Buat Password Anda" required>
+                    </div>
+                    <div class="mb-3 custom-margin2">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Konfirmasi Password" required>
+                    </div>
+                    <div class="mb-3 custom-margin2">
+                        <p>
+                        Sudah Punya akun?<a href="login.php"> Login disini</a></p>
+                    </div>
+                    <div class="mb-3 custom-margin2">
+                        <button type="submit" class="btn btn-primary custom-btn" name="register">Register!</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        
-        <div class="flex-grow-1 ms-5 custom-margin">
-          <h4 class="login-title text-md">Registrasi Siswa PKL</h4>
-          <form action="" method="post">
-            <div class="mb-3 custom-margin2">
-              <label for="username" class="form-label">Nama Siswa PKL</label>
-              <input type="text" name="username" class="form-control" id="username"  placeholder="Masukan Nama Anda" required autofocus>
-            </div>
-      
-            <div class="mb-3 custom-margin2">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Buat Password Anda" required>
-            </div>
-
-            <div class="mb-3 custom-margin2">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="Password" name="confirmPassword" class="form-control" id="confirmPassword"  placeholder="Konfirmasi Password" required>
-            </div>
-            <div class="mb-3 custom-margin2">
-              <a href="login.php">Sudah Punya akun?login disini</a>
-            </div>
-            <div class="mt-4 custom-margin2">
-            <button button type="submit" class="btn btn-primary custom-btn" name="register">Register!</button>
-            </div>
-          </form> 
-        </div>
-      </div>
-    </div>
   </div>
   </body>
 </html>
