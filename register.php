@@ -53,7 +53,7 @@ if(isset($_POST["register"])){
                     </div>
                     <div class="mb-3 custom-margin2">
                         <p>
-                        Sudah Punya akun?<a href="login.php"> Login disini</a></p>
+                        Sudah Punya akun?<a href="login.php">Login</a></p>
                     </div>
                     <div class="mb-3 custom-margin2">
                         <button type="submit" class="btn btn-primary custom-btn" name="register">Register!</button>

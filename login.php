@@ -68,32 +68,34 @@ if(isset($_POST["login"])){
   <body>
   <div class="position-absolute top-0 start-50 translate-middle-x">
     <div class="form-container">
-      <div class="d-flex align-items-center">
-        <div class="flex-shrink-0">
+      <div class="costum-align row align-iems-center">
+        <div class="col-md-5">
+        <div class="d-flex justify-content-center">
           <img class="img-register" src="img/register-img.png" alt="...">
         </div>
+        </div>
         
-        <div class="flex-grow-1 ms-5">
-          <h4 class="login-title">Halaman Login Siswa PKL</h4>
+        <div class="col-md-7">
+          <h4 class="login-title text-md">Halaman Login Siswa PKL</h4>
           <form action="" method="post">
-            <div class="mb-3">
-              <label for="username" class="form-label">Nama Siswa PKL</label>
+            <div class="mb-3 custom-margin2">
+              <label for="username">Nama Siswa PKL</label>
               <input type="text" name="username" class="form-control" id="username"  placeholder="Masukan Nama Anda" required autofocus>
             </div>
       
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+            <div class="mb-3 custom-margin2">
+              <label for="password">Password</label>
               <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password Anda" required>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 custom-margin2">
               <input type="checkbox" name="remember" id="remember">
-              <label for="remember" class="form-label">Ingat Saya</label>
+              <label for="remember">Ingat Saya</label>
             </div>
-            <div class="mb-3">
-              <a href="register.php">belum punya akun?registrasi disini</a>
+            <div class="mb-3 custom-margin2">
+            <p>belum punya akun?<a href="register.php">registrasi</a></p>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 custom-margin2">
             <button button type="submit" class="btn btn-primary" name="login">Login</button>
             </div>
           </form> 
