@@ -94,9 +94,9 @@ require 'functions/functions.php';
         
         <div class="container">
             <div class="row ms-3 me-3">
-                <div class="col-md-6 mb-4">
+                <div class="col-lg-6 mb-4">
                     <div class="card text-bg-success h-100 custom-padding">
-                        <div class="row align-items-center">
+                        <div class="row justify-content-center align-items-center">
                             <div class="col-md-4">
                                 <img src="img/register-img.png" class="img-fluid rounded-start img-style" alt="...">
                             </div>
@@ -112,18 +112,18 @@ require 'functions/functions.php';
                 </div>
             </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-lg-6 mb-4">
                     <div class="card h-100 custom-padding">
-                        <div class="row align-items-center">
+                        <div class="row justify-content-center align-items-center">
                             <div class="col-md-4">
                             <img src="img/register-img.png" class="img-fluid rounded-start img-style" alt="...">
                             </div>
                         <div class="col-md-8">
                         
                         <div class="card-body">
-                            <h5 class="card-title mt-3">Absensi Masuk</h5>
-                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Masuk.</p>
-                             <a class="btn btn-warning" href="absen-masuk.php" role="button">Klik untuk absen masuk</a>
+                            <h5 class="card-title mt-3">Absensi Pulang</h5>
+                            <p class="card-text">Setiap Siswa PKL Sari Teknologi Wajib melakukan Absensi Pulang.</p>
+                             <a class="btn btn-warning" href="absen-pulang.php" role="button">Klik untuk absen Pulang</a>
                         </div>
                         </div>
                         </div>
@@ -145,7 +145,8 @@ toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
 })
 ;
-    </script>
+
+</script>
 
 </body>
 </html>
