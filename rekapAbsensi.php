@@ -49,7 +49,7 @@ $dataAbsen = query("SELECT * FROM tb_absen WHERE username = '$username1'");
             <div class="menu">
                 <ul class="menu-links p-0">
                     <li class="nav-link">
-                        <a href="dashboardUser.php">
+                        <a href="index.php">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Halaman Utama</span>
                         </a>

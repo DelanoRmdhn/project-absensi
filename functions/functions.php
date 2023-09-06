@@ -79,14 +79,14 @@ function absenMasuk($data){
     echo "
       <script>
         alert('ANDA TELAT BAYARKAN DENDA PADA SEKRETARIS!');
-        document.location.href = 'dashboardUser.php';
+        document.location.href = 'index.php';
       </script>
     ";
   } else if($jamMasuk < 8.00){
     echo "
     <script>
       alert('Belum Bisa Absen!');
-      document.location.href = 'dashboardUser.php';
+      document.location.href = 'index.php';
     </script>
   ";
     return false;
@@ -108,7 +108,7 @@ function absenPulang($data){
       echo "
       <script>
         alert('Anda Sudah Absen!');
-        document.location.href = 'dashboardUser.php';
+        document.location.href = 'index.php';
       </script>
       ";
       return false;

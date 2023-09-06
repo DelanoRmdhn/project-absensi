@@ -17,7 +17,7 @@ if(isset($_COOKIE["id"]) && isset($_COOKIE["key"])){
 } 
 
 if(isset($_SESSION["login"])){
-  header("Location: dashboardUser.php");
+  header("Location: index.php");
 }
 
 if(isset($_POST["login"])){
@@ -39,7 +39,7 @@ if(isset($_POST["login"])){
           setcookie('id',$row["id"], $cookieExpire);
           setcookie('key', hash('sha256',$row["username"]), $cookieExpire);
         }
-        header("Location: dashboardUser.php");
+        header("Location: index.php");
         exit;
     }
   } else {
